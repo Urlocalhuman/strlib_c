@@ -22,6 +22,8 @@
   >*Formats **self**. **READ DOCUMENTATION***
 - `itoa_s ( int n ) -> string*`
   >*Returns a pointer to a new string containing **n** in text form*
+- `atoi_s ( string* num ) -> int`
+  >*Does the opposite of itoa_s, taking in **num** and returning it in integer form*
 - `input ( string* prompt, string* out ) ->`
   >*Gets keyboard input. **out** is OPTIONAL, give **NULL** if not used*
 - `print_s ( int count, string* sep, string* end, [string*]... ) ->`
