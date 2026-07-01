@@ -79,4 +79,4 @@ The 'methods' included in the struct are as given:
 - **str->len** *An integer containing the length of the string*
 
 ## All functions and what they do
--  wip will be done 27/06
+-  wip will be done when i have time
