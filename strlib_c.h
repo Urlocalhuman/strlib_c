@@ -27,6 +27,11 @@ typedef struct string {
 
     // will be used in future projects
     // if i make libraries for other types
+    // 
+    // dict library is planned
+    // potentially will do lists/tuples
+    // and thatll be the main types done
+    // cya
 } string;
 
 /**
@@ -43,11 +48,25 @@ int  startswith_s(string* self, string* str);
 int  endswith_s  (string* self, string* str);
 void concat_s    (string* self, string* str);
 int  strcmp_s    (string* a, string* b);
-int  isdigit_s   (string* self);
 
-string* format_s(string* self, ...);
-string* itoa_s(int n);
-int atoi_s(string* num);
+int  isdigit_s   (string* self);
+int  isalpha_s   (string* self);
+int  isalnum_s   (string* self);
+int  isdecimal_s (string* self);
+int  islower_s   (string* self);
+int  isupper_s   (string* self);
+int  isascii_s   (string* self); // will always return true 
+                                 // (strings still internally use char* arrays, for now)
+string* upper_s     (string* self);
+string* lower_s     (string* self);
+string* capitalise_s(string* self);
+string* format_s    (string* self, ...);
+string* itoa_s  (int n);
+int     atoi_s  (string* num);
+string* centre_s(string* self, int tlen, string* c);
+
+
+
 /**
  * Gets keyboard input.
  * @param[in] string* prompt to display
@@ -61,5 +80,12 @@ void check_freed_strings(void);
 void free_all_strings(void);
 void strlib_uninit(void); // WILL FREE STRING POOL
 
+// string-char methods
+// these directly use chars in some way
+// and so go here and are denoted with a _ before their name
+// can be very useful
 int _strlen(const char* s);
 int _strcmp_s(string* a, char* b, int b_len);
+void _strcpy_s(string* a, char* b);
+void _appendc(string* self, char c);
+string* _centre_s(string* self, int tlen, char c);
